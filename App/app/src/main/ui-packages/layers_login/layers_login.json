@@ -1,0 +1,546 @@
+{
+  "name": "layers_login",
+  "version": 32,
+  "source-key": {
+    "type": "figma",
+    "file": "xGS0Lf4sKBgQ6Vsyh8qiTz",
+    "node": "1:28",
+    "version": "4339468794",
+    "component-id": "842d263f484be6ca5f1344d9d5b7be3c06643100"
+  },
+  "default": "Layers_login",
+  "design": {
+    "atoms": [
+      {
+        "type": "group",
+        "id": "top_level",
+        "root": "true"
+      },
+      {
+        "type": "group",
+        "id": "BackGround"
+      },
+      {
+        "type": "text",
+        "id": "Title_login"
+      },
+      {
+        "type": "text",
+        "id": "Ttile"
+      },
+      {
+        "type": "group",
+        "id": "Name_login"
+      },
+      {
+        "type": "group",
+        "id": "Password_login"
+      },
+      {
+        "type": "group",
+        "id": "Login_button"
+      },
+      {
+        "type": "group",
+        "id": "Register_button"
+      },
+      {
+        "type": "vector",
+        "id": "Rectangle 1"
+      },
+      {
+        "type": "vector",
+        "id": "Rectangle 2"
+      },
+      {
+        "type": "vector",
+        "id": "Rectangle 46"
+      },
+      {
+        "type": "text",
+        "id": "Name"
+      },
+      {
+        "type": "vector",
+        "id": "Rectangle 47"
+      },
+      {
+        "type": "text",
+        "id": "Password"
+      },
+      {
+        "type": "vector",
+        "id": "Rectangle 48"
+      },
+      {
+        "type": "text",
+        "id": "Login"
+      },
+      {
+        "type": "vector",
+        "id": "Rectangle 49"
+      },
+      {
+        "type": "text",
+        "id": "Register"
+      }
+    ],
+    "modes": {
+      "Layers_login": {
+        "rules": [
+          {
+            "id": "top_level",
+            "is-structured": "false",
+            "children": [
+              "BackGround",
+              "Title_login",
+              "Ttile",
+              "Name_login",
+              "Password_login",
+              "Login_button",
+              "Register_button"
+            ],
+            "clip-content": "false"
+          },
+          {
+            "id": "BackGround",
+            "margin": {
+              "top": "181.0"
+            },
+            "is-structured": "false",
+            "children": [
+              "Rectangle 1",
+              "Rectangle 2"
+            ],
+            "clip-content": "false"
+          },
+          {
+            "id": "Title_login",
+            "margin": {
+              "left": "143.0",
+              "top": "329.0",
+              "right": "141.0",
+              "bottom": "442.0"
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "proportional",
+                "value": "1.0"
+              },
+              "height-constraints": {
+                "sizing-mode": "proportional",
+                "value": "1.0"
+              }
+            },
+            "font-weight": "700.0",
+            "color": {
+              "alpha": "1.0",
+              "hue": "0.0",
+              "saturation": "0.0",
+              "value": "0.0"
+            },
+            "text-content": "LOGIN",
+            "overflow": "visible",
+            "max-lines": "-1",
+            "text-align": "left",
+            "text-size": "24.0",
+            "line-height": "1.2102272510528564",
+            "typeface": "Inter"
+          },
+          {
+            "id": "Ttile",
+            "margin": {
+              "left": "16.0",
+              "right": "15.0",
+              "bottom": "619.0"
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "proportional",
+                "value": "1.0"
+              },
+              "height-constraints": {
+                "sizing-mode": "proportional",
+                "value": "1.0"
+              }
+            },
+            "font-weight": "600.0",
+            "color": {
+              "alpha": "1.0",
+              "hue": "0.0",
+              "saturation": "0.0",
+              "value": "0.0"
+            },
+            "annotated-text-content": {
+              "text": "WELCOME TO\n FILOZZ",
+              "annotated-text-span-list": [
+                {
+                  "span-start": "0",
+                  "span-length": "11",
+                  "annotated-text-style": {
+                    "font-weight": "700.0",
+                    "text-size": "16.0",
+                    "typeface": "Inter"
+                  }
+                },
+                {
+                  "span-start": "11",
+                  "span-length": "1",
+                  "annotated-text-style": {
+                    "font-weight": "700.0",
+                    "typeface": "Inter"
+                  }
+                },
+                {
+                  "span-start": "12",
+                  "span-length": "6",
+                  "annotated-text-style": {
+                    "font-weight": "700.0",
+                    "text-size": "64.0",
+                    "typeface": "Inter"
+                  }
+                }
+              ]
+            },
+            "overflow": "visible",
+            "max-lines": "-1",
+            "text-align-vertical": "center",
+            "text-size": "40.0",
+            "line-height": "1.2102272033691406",
+            "typeface": "Inter"
+          },
+          {
+            "id": "Name_login",
+            "margin": {
+              "left": "23.0",
+              "top": "400.0",
+              "right": "37.0",
+              "bottom": "349.0"
+            },
+            "border-radius": "20.0",
+            "is-structured": "false",
+            "children": [
+              "Rectangle 46",
+              "Name"
+            ],
+            "clip-content": "false"
+          },
+          {
+            "id": "Password_login",
+            "margin": {
+              "left": "23.0",
+              "top": "479.0",
+              "right": "37.0",
+              "bottom": "270.0"
+            },
+            "border-radius": "20.0",
+            "is-structured": "false",
+            "children": [
+              "Rectangle 47",
+              "Password"
+            ],
+            "clip-content": "false"
+          },
+          {
+            "id": "Login_button",
+            "margin": {
+              "left": "23.0",
+              "top": "579.0",
+              "right": "197.0",
+              "bottom": "170.0"
+            },
+            "border-radius": "20.0",
+            "tap-handler": "$on Login_button tapped",
+            "is-structured": "false",
+            "children": [
+              "Rectangle 48",
+              "Login"
+            ],
+            "clip-content": "false"
+          },
+          {
+            "id": "Register_button",
+            "margin": {
+              "left": "183.0",
+              "top": "579.0",
+              "right": "37.0",
+              "bottom": "170.0"
+            },
+            "border-radius": "20.0",
+            "tap-handler": "$on Register_button tapped",
+            "is-structured": "false",
+            "children": [
+              "Rectangle 49",
+              "Register"
+            ],
+            "clip-content": "false"
+          },
+          {
+            "id": "Rectangle 1",
+            "border-radius": "69.0",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "proportional",
+                "value": "1.0"
+              },
+              "height-constraints": {
+                "sizing-mode": "proportional",
+                "value": "1.0"
+              }
+            },
+            "vector-content": "rectangle_1.svg"
+          },
+          {
+            "id": "Rectangle 2",
+            "margin": {
+              "top": "177.0"
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "proportional",
+                "value": "1.0"
+              },
+              "height-constraints": {
+                "sizing-mode": "proportional",
+                "value": "1.0"
+              }
+            },
+            "vector-content": "rectangle_2.svg"
+          },
+          {
+            "id": "Rectangle 46",
+            "border-radius": "20.0",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "proportional",
+                "value": "1.0"
+              },
+              "height-constraints": {
+                "sizing-mode": "proportional",
+                "value": "1.0"
+              }
+            },
+            "vector-content": "rectangle_46.svg"
+          },
+          {
+            "id": "Name",
+            "opacity": "0.75",
+            "margin": {
+              "left": "19.897964477539062",
+              "top": "9.0",
+              "right": "58.16325378417969",
+              "bottom": "10.0"
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "proportional",
+                "value": "1.0"
+              },
+              "height-constraints": {
+                "sizing-mode": "proportional",
+                "value": "1.0"
+              }
+            },
+            "color": {
+              "alpha": "1.0",
+              "hue": "0.0",
+              "saturation": "0.0",
+              "value": "0.0"
+            },
+            "text-content": "$Name text content",
+            "overflow": "visible",
+            "max-lines": "-1",
+            "text-align": "left",
+            "text-align-vertical": "center",
+            "letter-spacing": "-0.4099999964237213",
+            "line-height": "1.5714285278320312",
+            "typeface": "Inter"
+          },
+          {
+            "id": "Rectangle 47",
+            "border-radius": "20.0",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "proportional",
+                "value": "1.0"
+              },
+              "height-constraints": {
+                "sizing-mode": "proportional",
+                "value": "1.0"
+              }
+            },
+            "vector-content": "rectangle_47.svg"
+          },
+          {
+            "id": "Password",
+            "opacity": "0.75",
+            "margin": {
+              "left": "19.897964477539062",
+              "top": "9.000015258789062",
+              "right": "58.16325378417969",
+              "bottom": "9.999984741210938"
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "proportional",
+                "value": "1.0"
+              },
+              "height-constraints": {
+                "sizing-mode": "proportional",
+                "value": "1.0"
+              }
+            },
+            "color": {
+              "alpha": "1.0",
+              "hue": "0.0",
+              "saturation": "0.0",
+              "value": "0.0"
+            },
+            "text-content": "$Password text content",
+            "overflow": "visible",
+            "max-lines": "-1",
+            "text-align": "left",
+            "text-align-vertical": "center",
+            "letter-spacing": "-0.4099999964237213",
+            "line-height": "1.5714285278320312",
+            "typeface": "Inter"
+          },
+          {
+            "id": "Rectangle 48",
+            "border-radius": "20.0",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "proportional",
+                "value": "1.0"
+              },
+              "height-constraints": {
+                "sizing-mode": "proportional",
+                "value": "1.0"
+              }
+            },
+            "vector-content": "rectangle_48.svg"
+          },
+          {
+            "id": "Login",
+            "margin": {
+              "left": "38.0",
+              "top": "11.0",
+              "right": "37.0",
+              "bottom": "11.0"
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "proportional",
+                "value": "1.0"
+              },
+              "height-constraints": {
+                "sizing-mode": "proportional",
+                "value": "1.0"
+              }
+            },
+            "font-weight": "700.0",
+            "color": {
+              "alpha": "1.0",
+              "hue": "0.0",
+              "saturation": "0.0",
+              "value": "0.0"
+            },
+            "text-content": "Login",
+            "overflow": "visible",
+            "text-align": "left",
+            "text-align-vertical": "center",
+            "text-size": "24.0",
+            "line-height": "1.2102272510528564",
+            "typeface": "Inter"
+          },
+          {
+            "id": "Rectangle 49",
+            "border-radius": "20.0",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "proportional",
+                "value": "1.0"
+              },
+              "height-constraints": {
+                "sizing-mode": "proportional",
+                "value": "1.0"
+              }
+            },
+            "vector-content": "rectangle_49.svg"
+          },
+          {
+            "id": "Register",
+            "margin": {
+              "left": "20.0",
+              "top": "11.0",
+              "right": "21.0",
+              "bottom": "11.0"
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "proportional",
+                "value": "1.0"
+              },
+              "height-constraints": {
+                "sizing-mode": "proportional",
+                "value": "1.0"
+              }
+            },
+            "font-weight": "700.0",
+            "color": {
+              "alpha": "1.0",
+              "hue": "0.0",
+              "saturation": "0.0",
+              "value": "0.0"
+            },
+            "text-content": "Register",
+            "overflow": "visible",
+            "text-align": "left",
+            "text-align-vertical": "center",
+            "text-size": "24.0",
+            "line-height": "1.2102272510528564",
+            "typeface": "Inter"
+          }
+        ]
+      }
+    }
+  },
+  "parameters": {
+    "on Login_button tapped": {
+      "data-type": "void-callback",
+      "required": false,
+      "description": ""
+    },
+    "on Register_button tapped": {
+      "data-type": "void-callback",
+      "required": false,
+      "description": ""
+    },
+    "Name text content": {
+      "data-type": "text",
+      "required": false,
+      "description": ""
+    },
+    "Password text content": {
+      "data-type": "text",
+      "required": false,
+      "description": ""
+    }
+  },
+  "previews": [
+    {
+      "design": "Layers_login",
+      "size": {
+        "width": 360.0,
+        "height": 800.0
+      },
+      "parameters": {
+        "Name text content": "Name",
+        "Password text content": "Password"
+      }
+    }
+  ],
+  "adin-component-search-paths": [],
+  "image-search-paths": [],
+  "vector-search-paths": []
+}
