@@ -13,6 +13,6 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "Filozz"
+rootProject.name = "Test"
 include(":app")
  

@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    namespace = "com.example.filozz"
+    namespace = "com.example.test"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.example.filozz"
+        applicationId = "com.example.test"
         minSdk = 30
         targetSdk = 34
         versionCode = 1
