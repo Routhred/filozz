@@ -1,4 +1,4 @@
-package com.example.test.view
+package com.example.filozz.view
 
 
 import androidx.compose.foundation.background
@@ -14,42 +14,33 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.offset
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.paddingFrom
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.foundation.verticalScroll
-import androidx.compose.material3.Button
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextField
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateListOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.platform.LocalConfiguration
 import androidx.compose.ui.text.TextStyle
-import androidx.compose.ui.text.font.Font
-import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.example.test.R
-import com.example.test.ui.theme.Green
-import com.example.test.ui.theme.Grey
-import com.example.test.ui.theme.PurpleBackground
-import com.example.test.ui.theme.interFont
+import androidx.navigation.NavController
+import com.example.filozz.Screen
+import com.example.filozz.server.loginRequest
+import com.example.filozz.ui.theme.*
 
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun LoginPage(){
+fun LoginPage(navController: NavController){
     Box(
         modifier = Modifier
             .background(PurpleBackground)
@@ -110,10 +101,10 @@ fun LoginPage(){
                         verticalArrangement = Arrangement.spacedBy(23.dp, Alignment.Top)){
 
                         var name by remember {
-                            mutableStateOf("")
+                            mutableStateOf("Name")
                         }
                         var password by remember{
-                            mutableStateOf("")
+                            mutableStateOf("Password")
                         }
                         TextField(
                             value = name,
@@ -122,19 +113,19 @@ fun LoginPage(){
                                 .border(
                                     width = 1.dp,
                                     color = Color.Black,
-                                    shape = RoundedCornerShape(size = 20.dp)
+                                    shape = RoundedCornerShape(size = TEXT_FIELD_ROUNDING_CORNER)
                                 )
                                 .width(320.dp)
                                 .height(73.dp)
                                 .background(
                                     color = Color.White,
-                                    shape = RoundedCornerShape(size = 20.dp)
+                                    shape = RoundedCornerShape(size = TEXT_FIELD_ROUNDING_CORNER)
                                 )
                                 .padding(
-                                    start = 22.dp,
-                                    top = 14.dp,
-                                    end = 22.dp,
-                                    bottom = 14.dp
+                                    start = TEXT_FIELD_PADDING_HORIZONTAL,
+                                    top = TEXT_FIELD_PADDING_VERTICAL,
+                                    end = TEXT_FIELD_PADDING_HORIZONTAL,
+                                    bottom = TEXT_FIELD_PADDING_VERTICAL
                                 )
                         )
                         TextField(
@@ -144,17 +135,17 @@ fun LoginPage(){
                                 .border(
                                     width = 1.dp,
                                     color = Color.Black,
-                                    shape = RoundedCornerShape(size = 20.dp))
+                                    shape = RoundedCornerShape(size = TEXT_FIELD_ROUNDING_CORNER))
                                 .width(320.dp)
                                 .height(73.dp)
                                 .background(
                                     color = Color.White,
-                                    shape = RoundedCornerShape(size = 20.dp))
+                                    shape = RoundedCornerShape(size = TEXT_FIELD_ROUNDING_CORNER))
                                 .padding(
-                                    start = 22.dp,
-                                    top = 14.dp,
-                                    end = 22.dp,
-                                    bottom = 14.dp))
+                                    start = TEXT_FIELD_PADDING_HORIZONTAL,
+                                    top = TEXT_FIELD_PADDING_VERTICAL,
+                                    end = TEXT_FIELD_PADDING_HORIZONTAL,
+                                    bottom = TEXT_FIELD_PADDING_VERTICAL))
 
                             Box(
                                 contentAlignment = Alignment.Center,
@@ -164,11 +155,12 @@ fun LoginPage(){
                                     .background(
                                         color = Green,
                                         shape = RoundedCornerShape(size = 8.dp))
-                                    .clickable { println("Name : $name, password : $password") }
+                                    .clickable { loginRequest(name = name, password = password) }
                             ) {
                                 Text(
                                     text = "Login",
                                     fontSize = 16.sp,
+
                                     fontFamily = interFont,
                                     fontWeight = FontWeight.Bold,
                                     color = Color.Black,
@@ -194,7 +186,8 @@ fun LoginPage(){
                                 fontWeight = FontWeight.Thin,
                                 color = Color.Blue,
                                 textAlign = TextAlign.Center,
-                                modifier = Modifier.clickable { println("Register") }
+                                modifier = Modifier.clickable { navController.navigate(Screen
+                                    .RegisterScreen.route) }
                             )
                         }
                     }
