@@ -118,8 +118,8 @@ fun RegisterPage(navController: NavController){
                             color = Color.Black,
                             shape = RoundedCornerShape(size = TEXT_FIELD_ROUNDING_CORNER)
                         )
-                        .width(320.dp)
-                        .height(73.dp)
+                        .width(TEXT_FIELD_WIDTH)
+                        .height(TEXT_FIELD_HEIGHT)
                         .background(
                             color = Color.White,
                             shape = RoundedCornerShape(size = TEXT_FIELD_ROUNDING_CORNER)
@@ -139,8 +139,8 @@ fun RegisterPage(navController: NavController){
                                 width = 1.dp,
                                 color = Color.Black,
                                 shape = RoundedCornerShape(size = TEXT_FIELD_ROUNDING_CORNER))
-                            .width(320.dp)
-                            .height(73.dp)
+                            .width(TEXT_FIELD_WIDTH)
+                            .height(TEXT_FIELD_HEIGHT)
                             .background(
                                 color = Color.White,
                                 shape = RoundedCornerShape(size = TEXT_FIELD_ROUNDING_CORNER))
@@ -159,8 +159,8 @@ fun RegisterPage(navController: NavController){
                                 color = Color.Black,
                                 shape = RoundedCornerShape(size = TEXT_FIELD_ROUNDING_CORNER)
                             )
-                            .width(320.dp)
-                            .height(73.dp)
+                            .width(TEXT_FIELD_WIDTH)
+                            .height(TEXT_FIELD_HEIGHT)
                             .background(
                                 color = Color.White,
                                 shape = RoundedCornerShape(size = TEXT_FIELD_ROUNDING_CORNER)
@@ -180,8 +180,8 @@ fun RegisterPage(navController: NavController){
                                 width = 1.dp,
                                 color = Color.Black,
                                 shape = RoundedCornerShape(size = TEXT_FIELD_ROUNDING_CORNER))
-                            .width(320.dp)
-                            .height(73.dp)
+                            .width(TEXT_FIELD_WIDTH)
+                            .height(TEXT_FIELD_HEIGHT)
                             .background(
                                 color = Color.White,
                                 shape = RoundedCornerShape(size = TEXT_FIELD_ROUNDING_CORNER))
