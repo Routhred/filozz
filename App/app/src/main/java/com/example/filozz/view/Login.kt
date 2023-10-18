@@ -33,8 +33,9 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
+import com.example.filozz.MainActivity
 import com.example.filozz.Screen
-import com.example.filozz.server.loginRequest
+import com.example.filozz.server.Connection
 import com.example.filozz.ui.theme.*
 
 
@@ -100,15 +101,15 @@ fun LoginPage(navController: NavController){
                     Column(horizontalAlignment = Alignment.CenterHorizontally,
                         verticalArrangement = Arrangement.spacedBy(23.dp, Alignment.Top)){
 
-                        var name by remember {
-                            mutableStateOf("Name")
+                        var email by remember {
+                            mutableStateOf("email")
                         }
                         var password by remember{
                             mutableStateOf("Password")
                         }
                         TextField(
-                            value = name,
-                            onValueChange = { text -> name = text },
+                            value = email,
+                            onValueChange = { text -> email = text },
                             modifier = Modifier
                                 .border(
                                     width = 1.dp,
@@ -155,7 +156,11 @@ fun LoginPage(navController: NavController){
                                     .background(
                                         color = Green,
                                         shape = RoundedCornerShape(size = 8.dp))
-                                    .clickable { loginRequest(name = name, password = password) }
+                                    .clickable {
+                                        MainActivity.connector.loginRequest(
+                                            email = email,
+                                            password = password)
+                                    }
                             ) {
                                 Text(
                                     text = "Login",
