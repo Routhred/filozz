@@ -20,7 +20,10 @@ fun navigation() {
             HomePage(navController = navController)
         }
         composable(route = Screen.HumorScreen.route) {
-            HomePage(navController = navController)
+            HumorPage(navController = navController)
+        }
+        composable(route = Screen.ParameterScreen.route) {
+            ParameterPage(navController = navController)
         }
     }
 }

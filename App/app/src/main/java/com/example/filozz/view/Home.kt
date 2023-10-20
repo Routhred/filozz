@@ -1,5 +1,6 @@
 package com.example.filozz.view
 
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
@@ -17,8 +18,13 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
+import com.example.filozz.AppInfo
+import com.example.filozz.R
 import com.example.filozz.Screen
 import com.example.filozz.ScreenInfo
 import com.example.filozz.rememberInfoScreen
@@ -59,7 +65,7 @@ fun HomePage(navController: NavController) {
                 )
 
             ) {
-                parameters_widget(screen = screen)
+                parameters_widget(screen = screen, navController = navController)
                 humor_widget(screen = screen, navController = navController)
             }
         }
@@ -113,18 +119,29 @@ fun chat_widget(screen: ScreenInfo) {
 }
 
 @Composable
-fun parameters_widget(screen: ScreenInfo) {
+fun parameters_widget(screen: ScreenInfo, navController: NavController) {
     Box(
         modifier = Modifier
             .width(screen.getDpWidth(4))
             .height(screen.getDpHeight(4))
             .background(
-                color = Green,
+                color = Color.DarkGray,
                 shape = RoundedCornerShape(size = 15.dp)
             )
             .padding(15.dp)
+            .clickable {
+                navController.navigate(
+                    Screen.ParameterScreen.route
+                )
+            }
     ) {
-        Text(text = "TODO : Parameters")
+        Image(
+            painter = painterResource(id = R.drawable.parameter),
+            contentDescription = null,
+            modifier = Modifier
+                .fillMaxSize()
+                .clip(RoundedCornerShape(size = 15.dp))
+        )
     }
 }
 
@@ -135,18 +152,24 @@ fun humor_widget(screen: ScreenInfo, navController: NavController) {
             .width(screen.getDpWidth(4))
             .height(screen.getDpHeight(4))
             .background(
-                color = Green,
+                color = Color.White,
                 shape = RoundedCornerShape(size = 15.dp)
             )
-            .padding(15.dp)
             .clickable {
+                println("Change screen")
                 navController.navigate(
                     Screen.HumorScreen.route
                 )
             }
 
     ) {
-        Text(text = "TODO : Happy")
+        Image(
+            painter = painterResource(id = AppInfo.humor),
+            contentDescription = null,
+            modifier = Modifier
+                .fillMaxSize()
+                .clip(RoundedCornerShape(size = 15.dp))
+        )
     }
 }
 
