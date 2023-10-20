@@ -6,16 +6,16 @@ import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import com.example.filozz.ui.theme.*
 
-sealed class Screen (val route : String){
+sealed class Screen(val route: String) {
     object LoginScreen : Screen("login_screen")
     object RegisterScreen : Screen("register_screen")
-
     object HomeScreen : Screen("home_screen")
+
+    object HumorScreen : Screen("humor_screen")
 }
 
-
 @Composable
-fun rememberInfoScreen(): ScreenInfo{
+fun rememberInfoScreen(): ScreenInfo {
     val configuration = LocalConfiguration.current
     return ScreenInfo(
         screenWidthInfo = when {
@@ -33,28 +33,27 @@ fun rememberInfoScreen(): ScreenInfo{
     )
 }
 
-
 data class ScreenInfo(
-    val screenWidthInfo : ScreenType,
-    val sceenHeightInfo : ScreenType,
-    val screenWidth : Dp,
-    val screenHeight : Dp
-){
+    val screenWidthInfo: ScreenType,
+    val sceenHeightInfo: ScreenType,
+    val screenWidth: Dp,
+    val screenHeight: Dp
+) {
 
-    fun getDpWidth(n : Int = 1) : Dp{
+    fun getDpWidth(n: Int = 1): Dp {
         return screenWidth.div(GRID_COLUMN).times(n)
     }
-    fun getDpHeight(n : Int = 1) : Dp{
+    fun getDpHeight(n: Int = 1): Dp {
         return screenHeight.div(GRID_ROW).times(n)
     }
 
-    fun getDpWidth(n : Float) : Dp{
+    fun getDpWidth(n: Float): Dp {
         return screenWidth.div(GRID_COLUMN).times(n)
     }
-    fun getDpHeight(n : Float) : Dp{
+    fun getDpHeight(n: Float): Dp {
         return screenHeight.div(GRID_ROW).times(n)
     }
-    sealed class ScreenType{
+    sealed class ScreenType {
         object Compact : ScreenType()
         object Medium : ScreenType()
         object Expended : ScreenType()

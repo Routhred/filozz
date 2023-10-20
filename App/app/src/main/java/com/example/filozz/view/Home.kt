@@ -1,6 +1,7 @@
 package com.example.filozz.view
 
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -18,6 +19,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
+import com.example.filozz.Screen
 import com.example.filozz.ScreenInfo
 import com.example.filozz.rememberInfoScreen
 import com.example.filozz.ui.theme.*
@@ -58,7 +60,7 @@ fun HomePage(navController: NavController) {
 
             ) {
                 parameters_widget(screen = screen)
-                humor_widget(screen = screen)
+                humor_widget(screen = screen, navController = navController)
             }
         }
         Row(
@@ -127,7 +129,7 @@ fun parameters_widget(screen: ScreenInfo) {
 }
 
 @Composable
-fun humor_widget(screen: ScreenInfo) {
+fun humor_widget(screen: ScreenInfo, navController: NavController) {
     Box(
         modifier = Modifier
             .width(screen.getDpWidth(4))
@@ -137,6 +139,11 @@ fun humor_widget(screen: ScreenInfo) {
                 shape = RoundedCornerShape(size = 15.dp)
             )
             .padding(15.dp)
+            .clickable {
+                navController.navigate(
+                    Screen.HumorScreen.route
+                )
+            }
 
     ) {
         Text(text = "TODO : Happy")
