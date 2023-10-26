@@ -1,6 +1,5 @@
 package com.example.filozz.view
 
-
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
@@ -35,28 +34,26 @@ import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import com.example.filozz.MainActivity
 import com.example.filozz.Screen
-import com.example.filozz.server.Connection
 import com.example.filozz.ui.theme.*
-
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun LoginPage(navController: NavController){
+fun LoginPage(navController: NavController) {
     Box(
         modifier = Modifier
             .background(PurpleBackground)
-            .fillMaxSize()
-    ){
+            .fillMaxSize(),
+    ) {
         Column {
             Box(
                 modifier = Modifier
                     .background(PurpleBackground)
                     .fillMaxWidth()
                     .fillMaxHeight(0.3f),
-                contentAlignment = Alignment.Center
+                contentAlignment = Alignment.Center,
 
-            ){
-                Column(horizontalAlignment = Alignment.CenterHorizontally){
+            ) {
+                Column(horizontalAlignment = Alignment.CenterHorizontally) {
                     Text(
                         text = "WELCOME TO",
                         style = TextStyle(
@@ -64,8 +61,8 @@ fun LoginPage(navController: NavController){
                             fontFamily = interFont,
                             fontWeight = FontWeight(700),
                             color = Color.Black,
-                            textAlign = TextAlign.Center
-                        )
+                            textAlign = TextAlign.Center,
+                        ),
                     )
                     Text(
                         text = "FILOZZ",
@@ -74,8 +71,8 @@ fun LoginPage(navController: NavController){
                             fontFamily = interFont,
                             fontWeight = FontWeight(800),
                             color = Color.Black,
-                            textAlign = TextAlign.Center
-                        )
+                            textAlign = TextAlign.Center,
+                        ),
                     )
                 }
             }
@@ -85,9 +82,9 @@ fun LoginPage(navController: NavController){
                     .fillMaxHeight()
                     .background(
                         color = Grey,
-                        shape = RoundedCornerShape(size = 88.dp)
-                    )
-            ){
+                        shape = RoundedCornerShape(size = 88.dp),
+                    ),
+            ) {
                 Box(
                     contentAlignment = Alignment.TopCenter,
                     modifier = Modifier
@@ -95,16 +92,17 @@ fun LoginPage(navController: NavController){
                         .fillMaxWidth()
                         .fillMaxHeight()
                         .background(
-                            color = Grey
-                        )
-                ){
-                    Column(horizontalAlignment = Alignment.CenterHorizontally,
-                        verticalArrangement = Arrangement.spacedBy(23.dp, Alignment.Top)){
-
+                            color = Grey,
+                        ),
+                ) {
+                    Column(
+                        horizontalAlignment = Alignment.CenterHorizontally,
+                        verticalArrangement = Arrangement.spacedBy(23.dp, Alignment.Top),
+                    ) {
                         var email by remember {
                             mutableStateOf("email")
                         }
-                        var password by remember{
+                        var password by remember {
                             mutableStateOf("Password")
                         }
                         TextField(
@@ -114,74 +112,80 @@ fun LoginPage(navController: NavController){
                                 .border(
                                     width = 1.dp,
                                     color = Color.Black,
-                                    shape = RoundedCornerShape(size = TEXT_FIELD_ROUNDING_CORNER)
+                                    shape = RoundedCornerShape(size = TEXT_FIELD_ROUNDING_CORNER),
                                 )
                                 .width(320.dp)
                                 .height(73.dp)
                                 .background(
                                     color = Color.White,
-                                    shape = RoundedCornerShape(size = TEXT_FIELD_ROUNDING_CORNER)
+                                    shape = RoundedCornerShape(size = TEXT_FIELD_ROUNDING_CORNER),
                                 )
                                 .padding(
                                     start = TEXT_FIELD_PADDING_HORIZONTAL,
                                     top = TEXT_FIELD_PADDING_VERTICAL,
                                     end = TEXT_FIELD_PADDING_HORIZONTAL,
-                                    bottom = TEXT_FIELD_PADDING_VERTICAL
-                                )
+                                    bottom = TEXT_FIELD_PADDING_VERTICAL,
+                                ),
                         )
                         TextField(
                             value = password,
-                            onValueChange = {value -> password = value},
+                            onValueChange = { value -> password = value },
                             modifier = Modifier
                                 .border(
                                     width = 1.dp,
                                     color = Color.Black,
-                                    shape = RoundedCornerShape(size = TEXT_FIELD_ROUNDING_CORNER))
+                                    shape = RoundedCornerShape(size = TEXT_FIELD_ROUNDING_CORNER),
+                                )
                                 .width(320.dp)
                                 .height(73.dp)
                                 .background(
                                     color = Color.White,
-                                    shape = RoundedCornerShape(size = TEXT_FIELD_ROUNDING_CORNER))
+                                    shape = RoundedCornerShape(size = TEXT_FIELD_ROUNDING_CORNER),
+                                )
                                 .padding(
                                     start = TEXT_FIELD_PADDING_HORIZONTAL,
                                     top = TEXT_FIELD_PADDING_VERTICAL,
                                     end = TEXT_FIELD_PADDING_HORIZONTAL,
-                                    bottom = TEXT_FIELD_PADDING_VERTICAL))
+                                    bottom = TEXT_FIELD_PADDING_VERTICAL,
+                                ),
+                        )
 
-                            Box(
-                                contentAlignment = Alignment.Center,
-                                modifier = Modifier
-                                    .height(56.dp)
-                                    .width(150.dp)
-                                    .background(
-                                        color = Green,
-                                        shape = RoundedCornerShape(size = 8.dp))
-                                    .clickable {
-                                        MainActivity.connector.loginRequest(
-                                            email = email,
-                                            password = password)
-                                    }
-                            ) {
-                                Text(
-                                    text = "Login",
-                                    fontSize = 16.sp,
-
-                                    fontFamily = interFont,
-                                    fontWeight = FontWeight.Bold,
-                                    color = Color.Black,
-                                    textAlign = TextAlign.Center
-
+                        Box(
+                            contentAlignment = Alignment.Center,
+                            modifier = Modifier
+                                .height(56.dp)
+                                .width(150.dp)
+                                .background(
+                                    color = Green,
+                                    shape = RoundedCornerShape(size = 8.dp),
                                 )
-                            }
+                                .clickable {
+                                    MainActivity.connector.loginRequest(
+                                        email = email,
+                                        password = password,
+                                    )
+                                },
+                        ) {
+                            Text(
+                                text = "Login",
+                                fontSize = 16.sp,
 
-                        Row(){
+                                fontFamily = interFont,
+                                fontWeight = FontWeight.Bold,
+                                color = Color.Black,
+                                textAlign = TextAlign.Center,
+
+                            )
+                        }
+
+                        Row() {
                             Text(
                                 text = "Not register yet? Click",
                                 fontSize = 16.sp,
                                 fontFamily = interFont,
                                 fontWeight = FontWeight.Thin,
                                 color = Color.Black,
-                                textAlign = TextAlign.Center
+                                textAlign = TextAlign.Center,
 
                             )
                             Text(
@@ -191,8 +195,12 @@ fun LoginPage(navController: NavController){
                                 fontWeight = FontWeight.Thin,
                                 color = Color.Blue,
                                 textAlign = TextAlign.Center,
-                                modifier = Modifier.clickable { navController.navigate(Screen
-                                    .RegisterScreen.route) }
+                                modifier = Modifier.clickable {
+                                    navController.navigate(
+                                        Screen
+                                            .RegisterScreen.route,
+                                    )
+                                },
                             )
                         }
                     }

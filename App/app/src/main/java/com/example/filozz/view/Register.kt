@@ -1,6 +1,5 @@
 package com.example.filozz.view
 
-
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
@@ -34,32 +33,30 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import com.example.filozz.Screen
+import com.example.filozz.ui.theme.*
 import com.example.filozz.ui.theme.Green
 import com.example.filozz.ui.theme.Grey
 import com.example.filozz.ui.theme.PurpleBackground
-import com.example.filozz.ui.theme.*
 import com.example.filozz.ui.theme.interFont
-
-
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun RegisterPage(navController: NavController){
+fun RegisterPage(navController: NavController) {
     Box(
         modifier = Modifier
             .background(PurpleBackground)
-            .fillMaxSize()
-    ){
+            .fillMaxSize(),
+    ) {
         Column {
             Box(
                 modifier = Modifier
                     .background(PurpleBackground)
                     .fillMaxWidth()
                     .fillMaxHeight(0.3f),
-                contentAlignment = Alignment.Center
+                contentAlignment = Alignment.Center,
 
-            ){
-                Column(horizontalAlignment = Alignment.CenterHorizontally){
+            ) {
+                Column(horizontalAlignment = Alignment.CenterHorizontally) {
                     Text(
                         text = "WELCOME TO",
                         style = TextStyle(
@@ -67,8 +64,8 @@ fun RegisterPage(navController: NavController){
                             fontFamily = interFont,
                             fontWeight = FontWeight(700),
                             color = Color.Black,
-                            textAlign = TextAlign.Center
-                        )
+                            textAlign = TextAlign.Center,
+                        ),
                     )
                     Text(
                         text = "FILOZZ",
@@ -77,8 +74,8 @@ fun RegisterPage(navController: NavController){
                             fontFamily = interFont,
                             fontWeight = FontWeight(800),
                             color = Color.Black,
-                            textAlign = TextAlign.Center
-                        )
+                            textAlign = TextAlign.Center,
+                        ),
                     )
                 }
             }
@@ -89,13 +86,14 @@ fun RegisterPage(navController: NavController){
                     .fillMaxHeight()
                     .background(
                         color = Grey,
-                        shape = RoundedCornerShape(88.dp, 88.dp, 0.dp, 0.dp)
-                    )
-            ){
-                Column(horizontalAlignment = Alignment.CenterHorizontally,
+                        shape = RoundedCornerShape(88.dp, 88.dp, 0.dp, 0.dp),
+                    ),
+            ) {
+                Column(
+                    horizontalAlignment = Alignment.CenterHorizontally,
                     verticalArrangement = Arrangement.spacedBy(23.dp, Alignment.Top),
-                    modifier = Modifier.offset(x = 0.dp, y = 80.dp)){
-
+                    modifier = Modifier.offset(x = 0.dp, y = 80.dp),
+                ) {
                     var name by remember {
                         mutableStateOf("Name")
                     }
@@ -105,50 +103,54 @@ fun RegisterPage(navController: NavController){
                     var email by remember {
                         mutableStateOf("Email")
                     }
-                    var password by remember{
+                    var password by remember {
                         mutableStateOf("Password")
                     }
 
                     TextField(
-                    value = name,
-                    onValueChange = { text -> name = text },
-                    modifier = Modifier
-                        .border(
-                            width = 1.dp,
-                            color = Color.Black,
-                            shape = RoundedCornerShape(size = TEXT_FIELD_ROUNDING_CORNER)
-                        )
-                        .width(TEXT_FIELD_WIDTH)
-                        .height(TEXT_FIELD_HEIGHT)
-                        .background(
-                            color = Color.White,
-                            shape = RoundedCornerShape(size = TEXT_FIELD_ROUNDING_CORNER)
-                        )
-                        .padding(
-                            start = TEXT_FIELD_ROUNDING_CORNER,
-                            top = TEXT_FIELD_PADDING_VERTICAL,
-                            end = TEXT_FIELD_PADDING_HORIZONTAL,
-                            bottom = TEXT_FIELD_PADDING_VERTICAL
-                        )
-                )
-                    TextField(
-                        value = surname,
-                        onValueChange = {value -> surname = value},
+                        value = name,
+                        onValueChange = { text -> name = text },
                         modifier = Modifier
                             .border(
                                 width = 1.dp,
                                 color = Color.Black,
-                                shape = RoundedCornerShape(size = TEXT_FIELD_ROUNDING_CORNER))
+                                shape = RoundedCornerShape(size = TEXT_FIELD_ROUNDING_CORNER),
+                            )
                             .width(TEXT_FIELD_WIDTH)
                             .height(TEXT_FIELD_HEIGHT)
                             .background(
                                 color = Color.White,
-                                shape = RoundedCornerShape(size = TEXT_FIELD_ROUNDING_CORNER))
+                                shape = RoundedCornerShape(size = TEXT_FIELD_ROUNDING_CORNER),
+                            )
+                            .padding(
+                                start = TEXT_FIELD_ROUNDING_CORNER,
+                                top = TEXT_FIELD_PADDING_VERTICAL,
+                                end = TEXT_FIELD_PADDING_HORIZONTAL,
+                                bottom = TEXT_FIELD_PADDING_VERTICAL,
+                            ),
+                    )
+                    TextField(
+                        value = surname,
+                        onValueChange = { value -> surname = value },
+                        modifier = Modifier
+                            .border(
+                                width = 1.dp,
+                                color = Color.Black,
+                                shape = RoundedCornerShape(size = TEXT_FIELD_ROUNDING_CORNER),
+                            )
+                            .width(TEXT_FIELD_WIDTH)
+                            .height(TEXT_FIELD_HEIGHT)
+                            .background(
+                                color = Color.White,
+                                shape = RoundedCornerShape(size = TEXT_FIELD_ROUNDING_CORNER),
+                            )
                             .padding(
                                 start = TEXT_FIELD_PADDING_HORIZONTAL,
                                 top = TEXT_FIELD_PADDING_VERTICAL,
                                 end = TEXT_FIELD_PADDING_HORIZONTAL,
-                                bottom = TEXT_FIELD_PADDING_VERTICAL))
+                                bottom = TEXT_FIELD_PADDING_VERTICAL,
+                            ),
+                    )
 
                     TextField(
                         value = email,
@@ -157,40 +159,43 @@ fun RegisterPage(navController: NavController){
                             .border(
                                 width = 1.dp,
                                 color = Color.Black,
-                                shape = RoundedCornerShape(size = TEXT_FIELD_ROUNDING_CORNER)
+                                shape = RoundedCornerShape(size = TEXT_FIELD_ROUNDING_CORNER),
                             )
                             .width(TEXT_FIELD_WIDTH)
                             .height(TEXT_FIELD_HEIGHT)
                             .background(
                                 color = Color.White,
-                                shape = RoundedCornerShape(size = TEXT_FIELD_ROUNDING_CORNER)
+                                shape = RoundedCornerShape(size = TEXT_FIELD_ROUNDING_CORNER),
                             )
                             .padding(
                                 start = TEXT_FIELD_PADDING_HORIZONTAL,
                                 top = TEXT_FIELD_PADDING_VERTICAL,
                                 end = TEXT_FIELD_PADDING_HORIZONTAL,
-                                bottom = TEXT_FIELD_PADDING_VERTICAL
-                            )
+                                bottom = TEXT_FIELD_PADDING_VERTICAL,
+                            ),
                     )
                     TextField(
                         value = password,
-                        onValueChange = {value -> password = value},
+                        onValueChange = { value -> password = value },
                         modifier = Modifier
                             .border(
                                 width = 1.dp,
                                 color = Color.Black,
-                                shape = RoundedCornerShape(size = TEXT_FIELD_ROUNDING_CORNER))
+                                shape = RoundedCornerShape(size = TEXT_FIELD_ROUNDING_CORNER),
+                            )
                             .width(TEXT_FIELD_WIDTH)
                             .height(TEXT_FIELD_HEIGHT)
                             .background(
                                 color = Color.White,
-                                shape = RoundedCornerShape(size = TEXT_FIELD_ROUNDING_CORNER))
+                                shape = RoundedCornerShape(size = TEXT_FIELD_ROUNDING_CORNER),
+                            )
                             .padding(
                                 start = TEXT_FIELD_PADDING_HORIZONTAL,
                                 top = TEXT_FIELD_PADDING_VERTICAL,
                                 end = TEXT_FIELD_PADDING_HORIZONTAL,
-                                bottom = TEXT_FIELD_PADDING_VERTICAL))
-
+                                bottom = TEXT_FIELD_PADDING_VERTICAL,
+                            ),
+                    )
 
                     Box(
                         contentAlignment = Alignment.Center,
@@ -199,8 +204,9 @@ fun RegisterPage(navController: NavController){
                             .width(150.dp)
                             .background(
                                 color = Green,
-                                shape = RoundedCornerShape(size = 8.dp))
-                            .clickable { println("Name : $name, password : $password") }
+                                shape = RoundedCornerShape(size = 8.dp),
+                            )
+                            .clickable { println("Name : $name, password : $password") },
                     ) {
                         Text(
                             text = "Register",
@@ -208,18 +214,18 @@ fun RegisterPage(navController: NavController){
                             fontFamily = interFont,
                             fontWeight = FontWeight.Bold,
                             color = Color.Black,
-                            textAlign = TextAlign.Center
+                            textAlign = TextAlign.Center,
 
                         )
                     }
-                    Row(){
+                    Row() {
                         Text(
                             text = "Already an account?",
                             fontSize = 16.sp,
                             fontFamily = interFont,
                             fontWeight = FontWeight.Thin,
                             color = Color.Black,
-                            textAlign = TextAlign.Center
+                            textAlign = TextAlign.Center,
 
                         )
                         Text(
@@ -229,12 +235,14 @@ fun RegisterPage(navController: NavController){
                             fontWeight = FontWeight.Thin,
                             color = Color.Blue,
                             textAlign = TextAlign.Center,
-                            modifier = Modifier.clickable { navController.navigate(
-                                Screen
-                                .LoginScreen.route) }
+                            modifier = Modifier.clickable {
+                                navController.navigate(
+                                    Screen
+                                        .LoginScreen.route,
+                                )
+                            },
                         )
                     }
-
                 }
             }
         }

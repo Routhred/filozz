@@ -2,18 +2,17 @@ package com.example.filozz
 
 import android.content.Context
 import android.os.Bundle
-import android.util.Log
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import com.example.filozz.server.Connection
 import com.example.filozz.server.*
+import com.example.filozz.server.Connection
 import com.example.filozz.ui.theme.TestTheme
 
 class MainActivity : ComponentActivity() {
 
     companion object {
         lateinit var appContext: Context
-        lateinit var connector : Connection
+        lateinit var connector: Connection
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -23,8 +22,7 @@ class MainActivity : ComponentActivity() {
         setContent {
             TestTheme {
                 navigation()
-                }
             }
         }
+    }
 }
-
