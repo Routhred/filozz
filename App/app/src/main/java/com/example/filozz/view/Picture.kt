@@ -9,34 +9,48 @@ import androidx.compose.material3.Button
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
-import com.example.filozz.MainActivity
+import com.example.filozz.AppInfo
 import com.example.filozz.location.LocationService
 
 @Composable
 fun PicturePage(navController: NavController) {
+    var latitude by remember {
+        mutableStateOf(AppInfo.location?.latitude.toString())
+    }
+    var longitude by remember {
+        mutableStateOf(AppInfo.location?.longitude.toString())
+    }
+    var locationText by remember {
+        mutableStateOf("($latitude; $longitude)")
+    }
     Column(
         modifier = Modifier.fillMaxSize()
     ) {
         Button(onClick = {
-            Intent(MainActivity.appContext, LocationService::class.java).apply {
+            Intent(AppInfo.appContext, LocationService::class.java).apply {
                 action = LocationService.ACTION_START
-                MainActivity.appContext.startService(this)
+                AppInfo.appContext.startService(this)
             }
         }) {
             Text(text = "Start")
         }
         Spacer(modifier = Modifier.height(16.dp))
         Button(onClick = {
-            Intent(MainActivity.appContext, LocationService::class.java).apply {
+            Intent(AppInfo.appContext, LocationService::class.java).apply {
                 action = LocationService.ACTION_STOP
-                MainActivity.appContext.startService(this)
+                AppInfo.appContext.startService(this)
             }
         }) {
             Text(text = "Stop")
         }
+        Text(
+            text = "(" + AppInfo.location?.latitude.toString() + ";" + AppInfo.location?.longitude.toString() + ")"
+        )
     }
 }

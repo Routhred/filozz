@@ -1,12 +1,9 @@
 package com.example.filozz.location
 
-import android.app.NotificationManager
 import android.app.Service
-import android.content.Context
 import android.content.Intent
 import android.os.IBinder
-import androidx.core.app.NotificationCompat
-import com.example.filozz.R
+import com.example.filozz.AppInfo
 import com.google.android.gms.location.LocationServices
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -46,32 +43,20 @@ class LocationService : Service() {
     }
 
     private fun start() {
-        val notification = NotificationCompat.Builder(this, "location")
-            .setContentTitle("Tracking location ...")
-            .setContentText("Location : null")
-            .setOngoing(true)
-            .setSmallIcon(R.drawable.ic_launcher_foreground)
-
-        val notificationManager = getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager // ktlint-disable max-line-length
-
         locationClient
             .getLocationUpdates(10000L)
             .catch { e ->
-                println(e.message)
+                println("Error " + e.message)
             }
             .onEach { location ->
                 val lat = location.latitude.toString()
                 val long = location.longitude.toString()
-                val updateNotification = notification.setContentText(
-                    "Location : ($lat,$long)"
-                )
-                notificationManager.notify(1, updateNotification.build())
+                AppInfo.location = location
+                println("Location : ($lat,$long)")
             }
             .launchIn(serviceScope)
-        startForeground(1, notification.build())
     }
     private fun stop() {
-        stopForeground(true)
         stopSelf()
     }
 

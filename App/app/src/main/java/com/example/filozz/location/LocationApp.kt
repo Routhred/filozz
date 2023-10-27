@@ -3,6 +3,7 @@ package com.example.filozz.location
 import android.app.Application
 import android.app.NotificationChannel
 import android.app.NotificationManager
+import android.content.Context
 
 class LocationApp : Application() {
     override fun onCreate() {
@@ -12,7 +13,7 @@ class LocationApp : Application() {
             "Location",
             NotificationManager.IMPORTANCE_LOW
         )
-        val notificationManager = getSystemService(NOTIFICATION_SERVICE) as NotificationManager
+        val notificationManager = getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager // ktlint-disable max-line-length
         notificationManager.createNotificationChannel(channel)
     }
 }
