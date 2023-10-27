@@ -14,7 +14,9 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.offset
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextField
@@ -56,7 +58,9 @@ fun RegisterPage(navController: NavController) {
                 contentAlignment = Alignment.Center
 
             ) {
-                Column(horizontalAlignment = Alignment.CenterHorizontally) {
+                Column(
+                    horizontalAlignment = Alignment.CenterHorizontally
+                ) {
                     Text(
                         text = "WELCOME TO",
                         style = TextStyle(
@@ -92,7 +96,9 @@ fun RegisterPage(navController: NavController) {
                 Column(
                     horizontalAlignment = Alignment.CenterHorizontally,
                     verticalArrangement = Arrangement.spacedBy(23.dp, Alignment.Top),
-                    modifier = Modifier.offset(x = 0.dp, y = 80.dp)
+                    modifier = Modifier
+                        .offset(x = 0.dp, y = 80.dp)
+                        .verticalScroll(rememberScrollState())
                 ) {
                     var name by remember {
                         mutableStateOf("Name")

@@ -20,6 +20,7 @@ import androidx.compose.material3.Text
 import androidx.compose.material3.TextField
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
@@ -32,7 +33,6 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
-import com.example.filozz.Screen
 import com.example.filozz.server.loginRequest
 import com.example.filozz.ui.theme.*
 
@@ -105,6 +105,12 @@ fun LoginPage(navController: NavController) {
                         var password by remember {
                             mutableStateOf("Password")
                         }
+                        var errorField by remember {
+                            mutableStateOf("")
+                        }
+                        var errorCode by remember {
+                            mutableIntStateOf(0)
+                        }
                         TextField(
                             value = name,
                             onValueChange = { text -> name = text },
@@ -159,7 +165,23 @@ fun LoginPage(navController: NavController) {
                                     color = Green,
                                     shape = RoundedCornerShape(size = 8.dp)
                                 )
-                                .clickable { loginRequest(name = name, password = password) }
+                                .clickable {
+                                    errorCode = TryLogin(
+                                        name = name,
+                                        password =
+                                        password
+                                    )
+                                    when (errorCode) {
+                                        0 -> navController.navigate(
+                                            "main"
+                                        ) {
+                                            popUpTo("auth") {
+                                                inclusive = true
+                                            }
+                                        }
+                                        1 -> errorField = "Error Login"
+                                    }
+                                }
                         ) {
                             Text(
                                 text = "Login",
@@ -191,10 +213,7 @@ fun LoginPage(navController: NavController) {
                                 color = Color.Blue,
                                 textAlign = TextAlign.Center,
                                 modifier = Modifier.clickable {
-                                    navController.navigate(
-                                        Screen
-                                            .RegisterScreen.route
-                                    )
+                                    navController.navigate("register_screen")
                                 }
                             )
                         }
@@ -203,4 +222,9 @@ fun LoginPage(navController: NavController) {
             }
         }
     }
+}
+
+fun TryLogin(name: String, password: String): Int {
+    loginRequest(name, password)
+    return 0
 }
