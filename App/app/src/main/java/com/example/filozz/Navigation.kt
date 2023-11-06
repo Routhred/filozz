@@ -1,5 +1,6 @@
 package com.example.filozz
 
+import android.content.Context
 import androidx.compose.runtime.Composable
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
@@ -8,7 +9,7 @@ import androidx.navigation.compose.rememberNavController
 import com.example.filozz.view.*
 
 @Composable
-fun NavigationGraph() {
+fun NavigationGraph(ctx: Context) {
     val navController = rememberNavController()
     NavHost(navController = navController, startDestination = "auth") {
         navigation(
@@ -36,7 +37,7 @@ fun NavigationGraph() {
                 ParameterPage(navController = navController)
             }
             composable(route = Screen.PictureScreen.route) {
-                PicturePage(navController = navController)
+                PicturePage(ctx, navController = navController)
             }
         }
     }
