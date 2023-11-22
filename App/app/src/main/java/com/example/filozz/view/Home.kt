@@ -205,7 +205,7 @@ fun locket_widget(screen: ScreenInfo, navController: NavController) {
             .clickable {
                 println("Change screen")
                 navController.navigate(
-                    Screen.PictureScreen.route
+                    "picture"
                 )
             }
     ) {

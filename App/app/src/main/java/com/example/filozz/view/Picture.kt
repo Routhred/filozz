@@ -10,11 +10,12 @@ import androidx.compose.material3.Button
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
-import com.example.filozz.AppInfo
+import androidx.navigation.compose.rememberNavController
+import com.example.filozz.MainActivity
 import com.example.filozz.location.LocationService
-import com.example.filozz.location.Map
 
 @Composable
 fun PicturePage(ctx: Context, navController: NavController) {
@@ -38,6 +39,18 @@ fun PicturePage(ctx: Context, navController: NavController) {
         }) {
             Text(text = "Stop")
         }
-        Map(location = AppInfo.location)
+        Spacer(modifier = Modifier.height(16.dp))
+        Button(onClick = {
+            navController.navigate("camera_screen")
+        }) {
+            Text(text = "Open Camera")
+        }
+        // Map(location = AppInfo.location)
     }
+}
+
+@Preview
+@Composable
+fun previewPicture() {
+    PicturePage(ctx = MainActivity(), navController = rememberNavController())
 }

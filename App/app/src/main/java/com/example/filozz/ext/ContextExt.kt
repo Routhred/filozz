@@ -1,17 +1,15 @@
 package com.example.filozz.ext
 
-import android.Manifest
 import android.content.Context
 import android.content.pm.PackageManager
 import androidx.core.content.ContextCompat
+import com.example.filozz.MainActivity
 
-fun Context.hasLocationPermission(): Boolean {
-    return ContextCompat.checkSelfPermission(
-        this,
-        Manifest.permission.ACCESS_COARSE_LOCATION
-    ) == PackageManager.PERMISSION_GRANTED &&
+fun Context.hasRequiredPermission(): Boolean {
+    return MainActivity.PERMISSIONS.all { it ->
         ContextCompat.checkSelfPermission(
             this,
-            Manifest.permission.ACCESS_FINE_LOCATION
+            it
         ) == PackageManager.PERMISSION_GRANTED
+    }
 }

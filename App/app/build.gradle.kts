@@ -62,6 +62,7 @@ dependencies {
     implementation("androidx.compose.ui:ui-graphics")
     implementation("androidx.compose.ui:ui-tooling-preview")
     implementation("androidx.compose.material3:material3")
+    implementation("com.google.android.material:material:1.10.0")
     implementation("androidx.navigation:navigation-compose:2.7.5")
     implementation("com.google.android.gms:play-services-maps:18.2.0")
     implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.6.2")
@@ -76,4 +77,15 @@ dependencies {
     implementation("com.google.maps.android:android-maps-utils:3.4.0")
     implementation("com.google.android.gms:play-services-location:21.0.1")
     implementation("com.google.maps.android:maps-compose:2.14.0")
+    implementation("androidx.exifinterface:exifinterface:1.3.6")
+
+    val cameraxVersion = "1.3.0-rc01"
+
+    implementation("androidx.camera:camera-core:$cameraxVersion")
+    implementation("androidx.camera:camera-camera2:$cameraxVersion")
+    implementation("androidx.camera:camera-lifecycle:$cameraxVersion")
+    implementation("androidx.camera:camera-video:$cameraxVersion")
+
+    implementation("androidx.camera:camera-view:$cameraxVersion")
+    implementation("androidx.camera:camera-extensions:$cameraxVersion")
 }
